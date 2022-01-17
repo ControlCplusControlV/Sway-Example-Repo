@@ -29,7 +29,7 @@ async fn harness() {
         .await
         .unwrap();
 
-    assert_eq!(100, result);
+    assert_eq!(0, result);
 
     // Call `increment_counter()` method in our deployed contract.
     let result = contract_instance
@@ -38,5 +38,5 @@ async fn harness() {
         .await
         .unwrap();
 
-    assert_eq!(15, result);
+    assert_eq!(5, result);
 }
