@@ -10,7 +10,7 @@ abi TestContract {
 
 impl TestContract for Contract {
   fn sqrtu64(gas_: u64, amount_: u64, color_: b256, amount: u64) -> u64 {
-    let value:u64 = amount % 10;
+    let value:u64 = 5;
 
     value
   }
