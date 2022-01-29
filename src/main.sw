@@ -160,15 +160,15 @@ impl BalanceMapping for BytesMapping {
 }
 
 abi CopiedSwayTest {
-    fn test_store(gas: u64, coins: u64, asset_id: b256, input: u64);
-    fn test_retrieve(gas: u64, coins: u64, asset_id: b256, input: u64) -> u64;
-    fn test_rebase_map_store(gas: u64, coins: u64, asset_id: b256, input: u64);
-    fn test_rebase_map_retrieve(gas: u64, coins: u64, asset_id: b256, input: u64) -> u64;
+    fn test_store(gas_: u64, amount_: u64, color_: b256, input: u64);
+    fn test_retrieve(gas_: u64, amount_: u64, color_: b256, input: u64) -> u64;
+    fn test_rebase_map_store(gas_: u64, amount_: u64, color_: b256, input: u64);
+    fn test_rebase_map_retrieve(gas_: u64, amount_: u64, color_: b256, input: u64) -> u64;
 
 }
 
 impl CopiedSwayTest for Contract {
-    fn test_store(gas: u64, coins: u64, asset_id: b256, input: u64) {
+    fn test_store(gas_: u64, amount_: u64, color_: b256, input: u64) {
         let myMapping = BytesMapping{
             map_id: 0x0000000000000000000000000000000000000000000000000000000000000000,
         };
@@ -179,7 +179,7 @@ impl CopiedSwayTest for Contract {
         myMapping.store(key1, key2, input);
     }
 
-    fn test_retrieve(gas: u64, coins: u64, asset_id: b256, input: u64) -> u64{
+    fn test_retrieve(gas_: u64, amount_: u64, color_: b256, input: u64) -> u64{
         let myMapping = BytesMapping{
             map_id: 0x0000000000000000000000000000000000000000000000000000000000000000,
         };
@@ -192,7 +192,7 @@ impl CopiedSwayTest for Contract {
         stored_num
     }
 
-    fn test_rebase_map_store(gas: u64, coins: u64, asset_id: b256, input: u64) {
+    fn test_rebase_map_store(gas_: u64, amount_: u64, color_: b256, input: u64) {
         let myMapping = BytesMapping{
             map_id: 0x0000000000000004000000400000000000000040000000000400004000000000,
         };   
@@ -207,7 +207,7 @@ impl CopiedSwayTest for Contract {
         myMapping.store_bal(key1, test_base);
     }
 
-    fn test_rebase_map_retrieve(gas: u64, coins: u64, asset_id: b256, input: u64) -> u64 {
+    fn test_rebase_map_retrieve(gas_: u64, amount_: u64, color_: b256, input: u64) -> u64 {
         let myMapping = BytesMapping{
             map_id: 0x0000000000000004000000400000000000000040000000000400004000000000,
         };   
